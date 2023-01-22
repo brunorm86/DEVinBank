@@ -38,17 +38,24 @@ button:hover {
     opacity: .7;
 
 }
-input{
+
+input {
     padding: 8px;
 
 
 }
 
-.formulario{
-    gap:8px;
+.formulario {
+    gap: 8px;
     flex-direction: column;
     display: flex;
 }
+
 .rodape {
     background-color: rgb(32 30 30);
+}
+
+.secao {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

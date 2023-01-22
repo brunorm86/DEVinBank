@@ -15,41 +15,78 @@
 </header>
 
 <main class="principal">
-    <h2>Formulario de Cadastro</h2>
-    <form id="form" class="formulario">
-        <div>
-            <label for="nome">Nome:</label>
-            <input id="nome" type="text" required placeholder="Digite seu nome...">
-        </div>
+    <section class="secao">
+        <h2>Formulario de Cadastro</h2>
+        <form id="form" class="formulario">
+            <div>
+                <label for="nome">Nome:</label>
+                <input id="nome" type="text" required placeholder="Digite seu nome..." value="oioioi">
+            </div>
 
-        <div>
-            <label for="cpf">CPF:</label>
-            <input id="cpf" type="text" required placeholder="XXX.XXX.XXX-XX">
-        </div>
-        <div>
-            <label for="celular">Celular:</label>
-            <input id="celular" type="tel" required placeholder="(00) 00000-0000" >
-        </div>
+            <div>
+                <label for="cpf">CPF:</label>
+                <input id="cpf" type="text" required placeholder="XXX.XXX.XXX-XX" value="654321">
+            </div>
+            <div>
+                <label for="celular">Celular:</label>
+                <input id="celular" type="tel" required placeholder="(00) 00000-0000" value="123456">
+            </div>
 
-        <div>
-            <label for="senha">Senha:</label>
-            <input id="senha" type="password" required placeholder="Digite a senha...">
-        </div>
+            <div>
+                <label for="senha">Senha:</label>
+                <input id="senha" type="password" required placeholder="Digite a senha..." value="teste">
+            </div>
 
-        <div>
-            <label for="confirmacao">Confirme a senha:</label>
-            <input id="confirmacao" type="password" required placeholder="Confirme sua senha...">
-        </div>
+            <div>
+                <label for="confirmacao">Confirme a senha:</label>
+                <input id="confirmacao" type="password" required placeholder="Confirme sua senha..." value="teste">
+            </div>
 
-        <div class="botoes">
-            <button type="submit" class="botao">
-                Cadastrar
-            </button>
-            <button type="reset" class="botao">
-                Limpar
-            </button>
-        </div>
-    </form>
+            <div class="botoes">
+                <button type="submit" class="botao">
+                    Cadastrar
+                </button>
+                <button type="reset" class="botao">
+                    Limpar
+                </button>
+            </div>
+        </form>
+    </section>
+    <hr/>
+    <section class="secao">
+        <h2>Acoes</h2>
+        <form id="form-acoes">
+            <div>
+                <label for="operacao">Operacao</label>
+                <select id="operacao" required>
+                    <option value="SAQUE">Saque</option>
+                    <option value="DEPOSITO">Deposito</option>
+                    <option value="SALDO">Consultar Saldo</option>
+
+                </select>
+            </div>
+            <div>
+                <label for="valor">Valor</label>
+                <input id="valor" type="number" required>
+            </div>
+            <div>
+                <label for="conta">Conta</label>
+                <input id="conta" type="number" required>
+            </div>
+            <div>
+                <label for="senha-op">Senha</label>
+                <input id="senha-op" type="password" required>
+            </div>
+            <div class="botoes">
+                <button type="submit" class="botao">
+                    Confirmar
+                </button>
+                <button type="reset" class="botao">
+                    Limpar
+                </button>
+            </div>
+        </form>
+    </section>
 </main>
 <footer class="rodape">
     <p>Texto do rodape aqui</p>
