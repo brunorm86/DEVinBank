@@ -15,8 +15,41 @@
 </header>
 
 <main class="principal">
-    <h1>main</h1>
+    <h2>Formulario de Cadastro</h2>
+    <form id="form" class="formulario">
+        <div>
+            <label for="nome">Nome:</label>
+            <input id="nome" type="text" required placeholder="Digite seu nome...">
+        </div>
 
+        <div>
+            <label for="cpf">CPF:</label>
+            <input id="cpf" type="text" required placeholder="XXX.XXX.XXX-XX">
+        </div>
+        <div>
+            <label for="celular">Celular:</label>
+            <input id="celular" type="tel" required placeholder="(00) 00000-0000" >
+        </div>
+
+        <div>
+            <label for="senha">Senha:</label>
+            <input id="senha" type="password" required placeholder="Digite a senha...">
+        </div>
+
+        <div>
+            <label for="confirmacao">Confirme a senha:</label>
+            <input id="confirmacao" type="password" required placeholder="Confirme sua senha...">
+        </div>
+
+        <div class="botoes">
+            <button type="submit" class="botao">
+                Cadastrar
+            </button>
+            <button type="reset" class="botao">
+                Limpar
+            </button>
+        </div>
+    </form>
 </main>
 <footer class="rodape">
     <p>Texto do rodape aqui</p>

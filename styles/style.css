@@ -22,9 +22,33 @@ body {
 
 .principal {
     display: flex;
-    flex: 1
+    flex-direction: column;
+    flex: 1;
+    padding: 20px 40px;
 }
 
-.rodape{
+button {
+    padding: 10px;
+    transition: opacity .3s;
+    color: black;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .7;
+
+}
+input{
+    padding: 8px;
+
+
+}
+
+.formulario{
+    gap:8px;
+    flex-direction: column;
+    display: flex;
+}
+.rodape {
     background-color: rgb(32 30 30);
 }
