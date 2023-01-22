@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+body {
+    background-color: rgb(37, 36, 36);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.principal {
+    display: flex;
+    flex: 1
+}
+
+.rodape{
+    background-color: rgb(32 30 30);
+}
