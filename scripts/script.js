@@ -41,29 +41,77 @@ const trocaOperacao = (evento) => {
 
 }
 
-const sacar = () => {
+const obterConta = (conta) => {
+    return contasClientes.find((c) => c.conta === conta)
 }
-const depositar = () => {
+const sacar = (conta, valor) => {
+    const contaCliente = obterConta(conta)
+    let saldoSimulado = contaCliente.saldo - valor
+    if (validarValor(saldoSimulado)) {
+        contaCliente.saldo -= valor
+        alert("Novo saldo: " + contaCliente.saldo)
+    } else {
+        alert("Saldo insuficiente!")
+    }
+
 }
-const consultarSaldo = () => {
+const depositar = (conta, valor) => {
+    if (validarValor(valor)) {
+        const contaCliente = obterConta(conta)
+
+        contaCliente.saldo += valor
+
+        console.log(contasClientes)
+
+        alert("Deposito efetuado com sucesso! " + contaCliente.saldo)
+    } else {
+        alert("Valor invalido!")
+    }
+}
+const consultarSaldo = (conta) => {
+    const contaCliente = obterConta(conta)
+    alert("Saldo atual: " + contaCliente.saldo)
 }
 
-const efetuarOperacao = (evento) =>{
+const validarValor = (valor) => {
+    if (!isNaN(valor) && valor > 0) {
+        return true
+    }
+    return false
+}
+const validarConta = (conta, senha) => {
+    const contaCliente = obterConta(conta)
+
+    return contaCliente && contaCliente.senha === senha ? true : false;
+
+};
+const efetuarOperacao = (evento) => {
+
+    const conta = parseInt(evento.target.conta.value)
+    const senha = evento.target.senhaop.value
+    const valor = parseInt(evento.target.valor.value)
     evento.preventDefault()
 
-    switch(evento.target.operacao.value){
-        case 'SAQUE':
-            sacar()
-            break;
-        case 'DEPOSITO':
-            depositar()
-            break;
-        case 'SALDO':
-            consultarSaldo()
-            break;
-        default:
-            alert('Operacao invalida!')
+    const contaValida = validarConta(conta, senha)
+    if (contaValida) {
+        switch (evento.target.operacao.value) {
+            case 'SAQUE':
+                sacar(conta, valor)
+                break;
+            case 'DEPOSITO':
+                depositar(conta, valor)
+                break;
+            case 'SALDO':
+                consultarSaldo(conta)
+                break;
+            default:
+                alert('Operacao invalida!')
+        }
+
+    } else {
+        alert("Conta ou senha invalida(s)")
     }
+
 }
 
 
@@ -71,4 +119,4 @@ const operacao = document.getElementById('operacao')
 operacao.addEventListener('change', trocaOperacao)
 
 const formAcoes = document.getElementById('form-acoes')
-formAcoes.addEventListener('submit', trocaOperacao)
+formAcoes.addEventListener('submit', efetuarOperacao)
